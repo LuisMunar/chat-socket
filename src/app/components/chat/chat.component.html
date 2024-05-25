@@ -1,0 +1,26 @@
+<div>
+  <div class="chat-container">
+    <div class="chat-header">
+      <h2>Chat</h2>
+    </div>
+
+    <div class="chat-body">
+      <div class="chat-messages">
+        @for (message of messages; track message) {
+          <div class="chat-message">
+            <div class="chat-message-user" [class]="message.user === userId ? 'right' : 'left'">{{message.user}}</div>
+            <div class="chat-message-text" [class]="message.user === userId ? 'right' : 'left'">{{message.message}}</div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="chat-footer">
+      <input type="text" placeholder="Type your message here..." [(ngModel)]="messageInput" (keydown.enter)="sendMessage()" />
+    </div>
+
+    <div>
+      <button (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>
