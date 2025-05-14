@@ -18,7 +18,8 @@ export class ChatService {
   }
 
   socketConnect() {
-    const url = '//localhost:8080/socket'
+    // const url = '//localhost:8080/sockets/ws'
+    const url = '//10.130.14.69:7094/sockets/ws'
     const socket = new SockJS(url)
     this.stompClient = Stomp.over(socket)
   }
